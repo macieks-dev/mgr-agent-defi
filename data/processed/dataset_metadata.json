@@ -1,0 +1,66 @@
+{
+  "cex_source": "cached_file",
+  "cex_interval": "12s",
+  "onchain_source": "cex_promoted",
+  "price_source": "binance_ethusdt_12s",
+  "price_range": "1386.76 \u2013 4956.51",
+  "n_cex_promoted_records": 38174400,
+  "n_features": 27,
+  "n_records": 38174400,
+  "feature_columns": [
+    "log_return_1",
+    "log_return_5",
+    "log_return_20",
+    "log_return_100",
+    "tick_delta",
+    "momentum",
+    "realized_vol_10",
+    "realized_vol_50",
+    "realized_vol_100",
+    "realized_vol_500",
+    "ema_vol",
+    "vol_ratio_10_100",
+    "ofi_10",
+    "ofi_50",
+    "cex_deviation_bps",
+    "cex_deviation_abs",
+    "cex_deviation_ema",
+    "cex_deviation_max_10",
+    "liquidity_norm",
+    "liquidity_change",
+    "liquidity_cv",
+    "hour_sin",
+    "hour_cos",
+    "dow_sin",
+    "dow_cos",
+    "gas_norm",
+    "gas_surge"
+  ],
+  "regime_distribution": {
+    "consolidation": 17792671,
+    "high_vol": 7053305,
+    "bull": 6724923,
+    "bear": 6603501
+  },
+  "train_size": 11649600,
+  "train_regimes": {
+    "high_vol": 4245427,
+    "consolidation": 3851749,
+    "bull": 1784678,
+    "bear": 1767746
+  },
+  "val_size": 15724800,
+  "val_regimes": {
+    "consolidation": 7989738,
+    "bull": 3127920,
+    "bear": 3012205,
+    "high_vol": 1594937
+  },
+  "test_size": 10540802,
+  "test_regimes": {
+    "consolidation": 5830913,
+    "bear": 1772684,
+    "bull": 1765011,
+    "high_vol": 1172194
+  }
+}

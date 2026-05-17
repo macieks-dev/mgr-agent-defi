@@ -1,0 +1,41 @@
+{
+  "elasticity_-1.0": {
+    "elasticity": -1.0,
+    "agent_reward_mean": 268.9241638183594,
+    "agent_reward_std": 2.155076742172241,
+    "baseline_reward_mean": 276.67365539406904,
+    "baseline_reward_std": 1.1979879338276467,
+    "improvement_pct": -2.8009502980657466,
+    "agent_mean_fee_bps": 41.19417962023972,
+    "bankruptcies": 0,
+    "n_episodes": 100,
+    "agent_beats_baseline": false,
+    "eval_time_sec": 343.17710757255554
+  },
+  "elasticity_-1.5": {
+    "elasticity": -1.5,
+    "agent_reward_mean": 233.6981658935547,
+    "agent_reward_std": 12.117506980895996,
+    "baseline_reward_mean": 276.67365539406904,
+    "baseline_reward_std": 1.1979879338276467,
+    "improvement_pct": -15.532917088817383,
+    "agent_mean_fee_bps": 41.196400949284744,
+    "bankruptcies": 0,
+    "n_episodes": 100,
+    "agent_beats_baseline": false,
+    "eval_time_sec": 329.17158126831055
+  },
+  "elasticity_-2.5": {
+    "elasticity": -2.5,
+    "agent_reward_mean": 181.32196044921875,
+    "agent_reward_std": 25.142047882080078,
+    "baseline_reward_mean": 276.67365539406904,
+    "baseline_reward_std": 1.1979879338276467,
+    "improvement_pct": -34.46359748476723,
+    "agent_mean_fee_bps": 41.19951562280252,
+    "bankruptcies": 0,
+    "n_episodes": 100,
+    "agent_beats_baseline": false,
+    "eval_time_sec": 328.82504057884216
+  }
+}

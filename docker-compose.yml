@@ -1,0 +1,92 @@
+# ══════════════════════════════════════════════════════════════════════
+#  Uniswap V4 RL Hook — Docker Compose
+#
+#  Services:
+#    1. anvil      — Local EVM node (blockchain simulator)
+#    2. app        — Main Python environment (training, testing, bridge)
+#    3. tensorboard — Training dashboard (web UI)
+# ══════════════════════════════════════════════════════════════════════
+
+services:
+  # ─── Anvil: Local EVM blockchain ───────────────────────────────────
+  # Runs a local Ethereum node for testing smart contracts
+  anvil:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: uniswap-v4-anvil
+    command: anvil --host 0.0.0.0 --port 8545 --accounts 10 --balance 10000 --block-time 1
+    ports:
+      - "8545:8545"
+    networks:
+      - v4net
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "cast", "block-number", "--rpc-url", "http://localhost:8545"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  # ─── App: Main development environment ────────────────────────────
+  # This is where you run training, tests, deployment, and the bridge
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: uniswap-v4-app
+    volumes:
+      # Mount project code so edits on host are reflected live
+      - .:/app
+      # Persist models and training runs between container restarts
+      - models_data:/app/models
+      - runs_data:/app/runs
+      - data_processed:/app/data/processed
+    environment:
+      - ANVIL_RPC_URL=http://anvil:8545
+      - PYTHONPATH=/app
+    env_file:
+      - .env
+    ports:
+      - "8888:8888"   # Jupyter (optional)
+    networks:
+      - v4net
+    depends_on:
+      anvil:
+        condition: service_healthy
+    stdin_open: true   # docker attach support
+    tty: true          # interactive terminal
+    command: bash
+    # ── Uncomment for GPU support (NVIDIA) ──
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+
+  # ─── TensorBoard: Training visualization ──────────────────────────
+  tensorboard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: uniswap-v4-tensorboard
+    command: tensorboard --logdir /app/runs --host 0.0.0.0 --port 6006
+    ports:
+      - "6006:6006"
+    volumes:
+      - runs_data:/app/runs
+    networks:
+      - v4net
+    restart: unless-stopped
+
+# ─── Persistent volumes ─────────────────────────────────────────────
+volumes:
+  models_data:    # Trained model checkpoints
+  runs_data:      # TensorBoard logs
+  data_processed: # Processed tick data
+
+# ─── Network ────────────────────────────────────────────────────────
+networks:
+  v4net:
+    driver: bridge

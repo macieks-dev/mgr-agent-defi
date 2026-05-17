@@ -1,0 +1,49 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+
+# Foundry
+out/
+cache/
+broadcast/
+
+# Python
+*.egg-info/
+dist/
+build/
+
+# Data (large files)
+data/raw/*.csv
+data/raw/*.parquet
+data/processed/*.parquet
+
+# Models
+models/*.zip
+models/*.pt
+models/*.pth
+!models/ppo_v4_final_final.zip
+
+# TensorBoard
+runs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node (if any)
+node_modules/
