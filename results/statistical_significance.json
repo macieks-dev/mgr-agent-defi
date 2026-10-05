@@ -1,0 +1,25 @@
+{
+  "statistical_tests": {
+    "welch_t": {
+      "t_stat": 7.839002889758999,
+      "p_one_sided": 3.638493343087783e-13
+    },
+    "mann_whitney_u": {
+      "u_stat": 8047.0,
+      "p_one_sided": 4.891855627433476e-14
+    },
+    "cohens_d": 1.1141872969560385,
+    "bootstrap_95ci": [
+      0.17067191004027035,
+      0.28220510449543706
+    ],
+    "n_episodes": 100
+  },
+  "weight_3_results": {
+    "agent_mean": 0.4060681164264679,
+    "agent_std": 0.2516844570636749,
+    "baseline_mean": 0.18055961741772567,
+    "baseline_std": 0.13632409046354768,
+    "improvement_pct": 124.89419824013433
+  }
+}

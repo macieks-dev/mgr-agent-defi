@@ -1,0 +1,17 @@
+{
+  "cuda": {
+    "mean_ms": 0.5756468,
+    "median_ms": 0.5509,
+    "p95_ms": 0.750725,
+    "p99_ms": 1.1784509999999995,
+    "max_ms": 1.5869
+  },
+  "cpu": {
+    "mean_ms": 0.4014705,
+    "median_ms": 0.38935,
+    "p99_ms": 0.724802,
+    "max_ms": 0.9221
+  },
+  "block_budget_ms": 12000,
+  "fits_in_block": true
+}

@@ -1,0 +1,68 @@
+
+services:
+  anvil:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: uniswap-v4-anvil
+    command: anvil --host 0.0.0.0 --port 8545 --accounts 10 --balance 10000 --block-time 1
+    ports:
+      - "127.0.0.1:8545:8545"
+    networks:
+      - v4net
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "cast", "block-number", "--rpc-url", "http://localhost:8545"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: uniswap-v4-app
+    volumes:
+      - .:/app
+      - models_data:/app/models
+      - runs_data:/app/runs
+      - data_processed:/app/data/processed
+    environment:
+      - ANVIL_RPC_URL=http://anvil:8545
+      - PYTHONPATH=/app
+    env_file:
+      - path: .env
+        required: false
+    ports:
+      - "127.0.0.1:8888:8888"
+    networks:
+      - v4net
+    depends_on:
+      anvil:
+        condition: service_healthy
+    stdin_open: true
+    tty: true
+    command: bash
+
+  tensorboard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: uniswap-v4-tensorboard
+    command: tensorboard --logdir /app/runs --host 0.0.0.0 --port 6006
+    ports:
+      - "127.0.0.1:6006:6006"
+    volumes:
+      - runs_data:/app/runs
+    networks:
+      - v4net
+    restart: unless-stopped
+
+volumes:
+  models_data:
+  runs_data:
+  data_processed:
+
+networks:
+  v4net:
+    driver: bridge

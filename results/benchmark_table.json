@@ -1,0 +1,31 @@
+{
+  "RL Agent (V4)": {
+    "cum_pnl_return_pct": 0.0708,
+    "max_drawdown": 0.005,
+    "sharpe_ratio": 5.949,
+    "sortino_ratio": null,
+    "excess_sharpe_ratio_vs_static30": 1.2996,
+    "lvr_bps": 0.0042,
+    "fee_income_usd": 71106.0
+  },
+  "Static 0.30%": {
+    "cum_pnl_return_pct": 0.0254,
+    "max_drawdown": 0.0,
+    "sharpe_ratio": null,
+    "sortino_ratio": null,
+    "lvr_bps": 0.0042,
+    "fee_income_usd": 27658.0
+  },
+  "Static 0.05%": {
+    "cum_pnl_return_pct": 0.0715,
+    "max_drawdown": 0.005,
+    "sharpe_ratio": null,
+    "sortino_ratio": null,
+    "lvr_bps": 0.0042,
+    "fee_income_usd": 71502.0
+  },
+  "HODL": {
+    "total_return_pct": -0.0016,
+    "sharpe_ratio": -0.018
+  }
+}

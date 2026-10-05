@@ -1,0 +1,236 @@
+{
+  "baseline_full_features": {
+    "reward_mean": 235.1448211669922,
+    "reward_std": 13.111918449401855,
+    "n_episodes": 50
+  },
+  "single_feature_occlusion": {
+    "log_return_1": {
+      "reward_mean": 235.15023803710938,
+      "reward_std": 13.106062889099121,
+      "n_episodes": 50,
+      "reward_drop_pct": 0.002303631477008057,
+      "feature_name": "log_return_1",
+      "feature_index": 0
+    },
+    "log_return_5": {
+      "reward_mean": 235.15965270996094,
+      "reward_std": 13.097126007080078,
+      "n_episodes": 50,
+      "reward_drop_pct": 0.006307407875075582,
+      "feature_name": "log_return_5",
+      "feature_index": 1
+    },
+    "log_return_20": {
+      "reward_mean": 235.13516235351562,
+      "reward_std": 13.114994049072266,
+      "n_episodes": 50,
+      "reward_drop_pct": -0.00410760204210169,
+      "feature_name": "log_return_20",
+      "feature_index": 2
+    },
+    "log_return_100": {
+      "reward_mean": 235.14927673339844,
+      "reward_std": 13.084949493408203,
+      "n_episodes": 50,
+      "reward_drop_pct": 0.0018948180036235287,
+      "feature_name": "log_return_100",
+      "feature_index": 3
+    },
+    "tick_delta": {
+      "reward_mean": 235.25978088378906,
+      "reward_std": 13.0654878616333,
+      "n_episodes": 50,
+      "reward_drop_pct": 0.048888900134587895,
+      "feature_name": "tick_delta",
+      "feature_index": 4
+    },
+    "realized_vol_10": {
+      "reward_mean": 235.33908081054688,
+      "reward_std": 13.023612976074219,
+      "n_episodes": 50,
+      "reward_drop_pct": 0.08261276713743541,
+      "feature_name": "realized_vol_10",
+      "feature_index": 5
+    },
+    "vol_ratio_10_100": {
+      "reward_mean": 235.17440795898438,
+      "reward_std": 13.117177963256836,
+      "n_episodes": 50,
+      "reward_drop_pct": 0.012582370236390486,
+      "feature_name": "vol_ratio_10_100",
+      "feature_index": 6
+    },
+    "ofi_10": {
+      "reward_mean": 235.10797119140625,
+      "reward_std": 13.126921653747559,
+      "n_episodes": 50,
+      "reward_drop_pct": -0.015671183146406927,
+      "feature_name": "ofi_10",
+      "feature_index": 7
+    },
+    "hour_sin": {
+      "reward_mean": 235.6186981201172,
+      "reward_std": 12.240571022033691,
+      "n_episodes": 50,
+      "reward_drop_pct": 0.20152557507031613,
+      "feature_name": "hour_sin",
+      "feature_index": 8
+    },
+    "hour_cos": {
+      "reward_mean": 235.15843200683594,
+      "reward_std": 13.056670188903809,
+      "n_episodes": 50,
+      "reward_drop_pct": 0.005788279654904752,
+      "feature_name": "hour_cos",
+      "feature_index": 9
+    },
+    "dow_sin": {
+      "reward_mean": 235.0556182861328,
+      "reward_std": 13.35994815826416,
+      "n_episodes": 50,
+      "reward_drop_pct": -0.037935294688983386,
+      "feature_name": "dow_sin",
+      "feature_index": 10
+    },
+    "dow_cos": {
+      "reward_mean": 235.43408203125,
+      "reward_std": 12.238967895507812,
+      "n_episodes": 50,
+      "reward_drop_pct": 0.12301392087223026,
+      "feature_name": "dow_cos",
+      "feature_index": 11
+    },
+    "current_fee_norm": {
+      "reward_mean": 223.0965576171875,
+      "reward_std": 28.171770095825195,
+      "n_episodes": 50,
+      "reward_drop_pct": -5.123763087572329,
+      "feature_name": "current_fee_norm",
+      "feature_index": 12
+    },
+    "cumulative_pnl": {
+      "reward_mean": 235.1128387451172,
+      "reward_std": 13.130755424499512,
+      "n_episodes": 50,
+      "reward_drop_pct": -0.01360115936847574,
+      "feature_name": "cumulative_pnl",
+      "feature_index": 13
+    },
+    "fee_income_rate": {
+      "reward_mean": 250.99539184570312,
+      "reward_std": 6.000949859619141,
+      "n_episodes": 50,
+      "reward_drop_pct": 6.740769624171438,
+      "feature_name": "fee_income_rate",
+      "feature_index": 14
+    },
+    "lvr_rate_bps": {
+      "reward_mean": 235.19686889648438,
+      "reward_std": 13.070394515991211,
+      "n_episodes": 50,
+      "reward_drop_pct": 0.022134329487533754,
+      "feature_name": "lvr_rate_bps",
+      "feature_index": 15
+    },
+    "toxic_flow_ratio": {
+      "reward_mean": 235.1478729248047,
+      "reward_std": 13.10916805267334,
+      "n_episodes": 50,
+      "reward_drop_pct": 0.0012978205504270745,
+      "feature_name": "toxic_flow_ratio",
+      "feature_index": 16
+    }
+  },
+  "group_occlusion": {
+    "LVR_protection": {
+      "reward_mean": 235.41705322265625,
+      "reward_std": 12.98797607421875,
+      "n_episodes": 50,
+      "reward_drop_pct": 0.11577208220084718,
+      "group_name": "LVR_protection",
+      "features": [
+        "realized_vol_10",
+        "vol_ratio_10_100",
+        "lvr_rate_bps",
+        "toxic_flow_ratio"
+      ],
+      "feature_indices": [
+        5,
+        6,
+        15,
+        16
+      ]
+    },
+    "Price_momentum": {
+      "reward_mean": 235.14251708984375,
+      "reward_std": 13.086164474487305,
+      "n_episodes": 50,
+      "reward_drop_pct": -0.0009798545155724411,
+      "group_name": "Price_momentum",
+      "features": [
+        "log_return_1",
+        "log_return_5",
+        "log_return_20",
+        "log_return_100"
+      ],
+      "feature_indices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "Market_microstructure": {
+      "reward_mean": 235.23802185058594,
+      "reward_std": 13.073857307434082,
+      "n_episodes": 50,
+      "reward_drop_pct": 0.03963543961004285,
+      "group_name": "Market_microstructure",
+      "features": [
+        "tick_delta",
+        "ofi_10"
+      ],
+      "feature_indices": [
+        4,
+        7
+      ]
+    },
+    "Temporal": {
+      "reward_mean": 235.74197387695312,
+      "reward_std": 11.502324104309082,
+      "n_episodes": 50,
+      "reward_drop_pct": 0.2539510362048178,
+      "group_name": "Temporal",
+      "features": [
+        "hour_sin",
+        "hour_cos",
+        "dow_sin",
+        "dow_cos"
+      ],
+      "feature_indices": [
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    "Runtime_state": {
+      "reward_mean": 265.3506164550781,
+      "reward_std": 80.72406768798828,
+      "n_episodes": 50,
+      "reward_drop_pct": 12.845613667736364,
+      "group_name": "Runtime_state",
+      "features": [
+        "current_fee_norm",
+        "cumulative_pnl",
+        "fee_income_rate"
+      ],
+      "feature_indices": [
+        12,
+        13,
+        14
+      ]
+    }
+  }
+}
